@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>所有文章</title>
+    <style>
+        p{
+            font-size: 50px;
+            text-align: center;
+            color: #37695a;
+        }
+        #vesse{
+            background-color: #239595;
+            height: 5000px;
+        }
+        .h1{
+            margin-left: 250px;
+        }
+        .a_style{
+            text-decoration: none;
+            font-size: 20px;
+        }
+        .a_style1{
+            position: absolute;
+            top: 150px;
+            left: 80px;
+            text-decoration: none;
+            font-size: 50px;
+        }
+
+        h3{
+            width: 1000px;
+            height: 800px;
+            font-size: 20px;
+            text-indent: 15px;
+            line-height: 28px;
+            border: 2px solid black;
+            margin-left: 40px;
+        }
+        .new_style{
+            border: 2px solid black;
+            width: 100px;
+            height: 30px;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<div id="vesse">
+    <p>ALL ARTICLE</p>
+    <h1>欢迎</h1>
+{#h2 标签里面写的是登陆进去/注册进去的人名字#}
+    <h2><a href="/personal" class="a_style1">{{ word }}</a></h2>
+    {% for con in content %}
+{#        根据哪个人索引出他所写出的所有文章#}
+        {% for inner_ms in con.titles %}
+    <h1 class="h1">{{ inner_ms.title }}</h1>
+            {% if con.namea==word %}
+                <h2>作者&nbsp;&nbsp;&nbsp;<a href="/personal" class="a_style">{{ con.namea }}</a></h2>
+            {% else %}
+                <h2>作者&nbsp;&nbsp;&nbsp;<a href="/blog/{{ con.id }}" class="a_style">{{ con.namea }}</a></h2>
+            {% endif %}
+            <h3>{{ inner_ms.content }}</h3>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="/newblog" class="new_style">新建博客</a>
+            {% endfor %}
+    {% endfor %}
+</div>
+</body>
+</html>

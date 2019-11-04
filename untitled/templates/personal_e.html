@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>其中的文章</title>
+    <style>
+        p{
+            font-size: 50px;
+            text-align: center;
+            color: #37695a;
+        }
+        #vesse{
+            background-color: #239595;
+            height: 5000px;
+        }
+        h1{
+            margin-left: 250px;
+        }
+        textarea{
+            margin-left: 100px;
+            width: 800px;
+            height: 800px;
+            font-size: 20px;
+            text-indent: 15px;
+            line-height: 28px;
+        }
+        .new_style{
+            text-decoration: none;
+            color: rebeccapurple;
+            border: 1px solid black;
+            font-size: 50px;
+            position: absolute;
+            top: 250px;
+            left: 200px;
+            font-weight: bolder;
+        }
+        .top_a{
+            text-decoration: none;
+            color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+<a href="/index" class="top_a">返回主页</a>
+<div id="vesse">
+    <p>PERSONAL  ARTICLE</p>
+    {% for inner_ms in message.titles %}
+    <h1>{{ inner_ms.title }}</h1>
+    <h2>作者{{ message.namea }}</h2>
+    <form>
+    <textarea name="into" >{{ inner_ms.content }}</textarea>
+        </form>
+        <a href="/delblog/{{ inner_ms.id }}">删除</a>
+        <a href="/editblog/{{ inner_ms.id }}">编辑</a>
+        {% else %}
+        <h1>空</h1>
+        <a href="/newblog" class="new_style">新建博客</a>
+    {% endfor %}
+</div>
+</body>
+</html>

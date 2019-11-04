@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑</title>
+    <style>
+        form{
+            position: absolute;
+            top: 20px;
+            left: 300px;
+        }
+        .title_style{
+            font-weight: bolder;
+            width: 300px;
+            color: black;
+            font-size: 20px;
+            height: 30px;
+            position: relative;
+            top: 4px;
+        }
+        .text_style{
+            position: relative;
+            top: 10px;
+            width: 400px;
+            height: 400px;
+            font-size: 20px;
+            text-indent: 30px;
+        }
+        .submit_style{
+            position: absolute;
+            top: 452px;
+            left: 380px;
+            border: 1px solid black;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form  action="/editblog/{{ title_id }}" method="post">
+        标题&nbsp;&nbsp;<input type="text" name="title_a" class="title_style"><br/>
+        <textarea name="content_a" class="text_style"></textarea><br/>
+        <input type="submit" value="编辑" class="submit_style">
+    </form>
+</body>
+</html>

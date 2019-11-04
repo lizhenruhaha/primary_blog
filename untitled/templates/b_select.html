@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>其中的文章</title>
+    <style>
+        p{
+            font-size: 50px;
+            text-align: center;
+            color: #37695a;
+        }
+        #vesse{
+            background-color: #239595;
+            height: 5000px;
+        }
+        h1{
+            margin-left: 250px;
+        }
+        textarea{
+            margin-left: 100px;
+            width: 800px;
+            height: 800px;
+            font-size: 20px;
+            text-indent: 15px;
+            line-height: 28px;
+        }
+    </style>
+</head>
+<body>
+<div id="vesse">
+    <p>ARTICLE</p>
+    {% for inner_ms in message.titles %}
+    <h1>{{ inner_ms.title }}</h1>
+    <h2>作者{{ message.namea }}</h2>
+    <form>
+    <textarea name="into" >{{ inner_ms.content }}</textarea>
+        </form>
+        {% else %}
+        <h1>你还没写</h1>
+        <a href="/newblog" target="_blank">新建博客</a>
+    {% endfor %}
+</div>
+</body>
+</html>

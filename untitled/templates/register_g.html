@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <style>
+        body{
+            background-color: #239595;
+            color: black;
+            font-size: 20px;
+        }
+        form{
+            position: absolute;
+            top: 200px;
+            left: 300px;
+        }
+        .top{
+            color: black;
+            font-size: 20px;
+        }
+        .center{
+             color: black;
+            font-size: 20px;
+            position: relative;
+            top: 3px;
+            left: 2px;
+        }
+        .buttom{
+             color: black;
+            font-size: 25px;
+            position: relative;
+            top: 20px;
+            left: 120px;
+            width: 200px;
+        }
+        .center2{
+            color: black;
+            font-size: 20px;
+            position: relative;
+            top: 6px;
+        }
+    </style>
+</head>
+<body>
+    <form name="reg" action="/register_g" method="post">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;昵称:&nbsp;&nbsp;<input type="text" name="name" class="top"><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码:&nbsp;&nbsp;<input type="password" name="password1" class="center"><br/>
+        确认密码:<input type="password" name="password2" class="center2"><br/>
+        <input type="submit" value="注册" class="buttom">
+    </form>
+</body>
+</html>
