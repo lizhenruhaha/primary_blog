@@ -1,2 +1,2 @@
 # primary_blog
-有待优化
+continue to update
